@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <pthread.h>
-
+#include<iostream>
+using namespace std;
 #define NTHREADS 10
 void *thread_function(void *);
 pthread_mutex_t mutex1 = PTHREAD_MUTEX_INITIALIZER;
@@ -8,6 +9,9 @@ int  counter = 0;
 
 main()
 {
+	cout<<"Name: Nabrass Gull  "<<endl;
+		cout<<"Roll no: BSIT-M2-20-08"<<endl;
+		
    pthread_t thread_id[NTHREADS];
    int i, j;
 
@@ -21,9 +25,7 @@ main()
       pthread_join( thread_id[j], NULL); 
    }
   
-   /* Now that all threads are complete I can print the final result.     */
-   /* Without the join I could be printing a value before all the threads */
-   /* have been completed.                                                */
+                                  
 
    printf("Final counter value: %d\n", counter);
 }
